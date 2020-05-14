@@ -25,7 +25,7 @@ Call the function three times. The return values should be:
 
 1. 15
 2. 24
-3. 33
+3. 36
 
 It should look a little like this:
 
@@ -48,7 +48,7 @@ Write a function called `removeDuplicates`, that takes in an array as an argumen
 const letters = ['a', 'b', 'b', 'c', 'd', 'a', 'e', 'f', 'f', 'c', 'b'];
 ```
 
-The function should create a copy of the original and return a modified version. This version should only include original letters, no duplicates! Use an array method to perform the operation.
+The function should modifies the original array: it should remove duplicate letters and `return` the result. 
 
 The end result should be:
 
@@ -107,15 +107,13 @@ Write a function that takes 4 arguments.
 - A callback that executes if the number is divisible by 3
 - A callback that executes if the number is divisible by 5
 
-The function should first generate an array, called `numbers`, containing values from start value to end value (inclusive).
+The function should first generate an array containing values from start value to end value (inclusive).
 
-Then the function should take the `numbers` array and iterate over it. 
+Then the function should take the newly created array and iterate over it, and calling the first callback if the array value is divisible by 3.
 
-If the array value is divisible by 3, call `threeCallback`. The return value of the callback should be "Number {NUM} is divisible by 3!".
+The function should call the second callback if the array value is divisible by 5.
 
-If the array value is divisible by 5, call `fiveCallback`. The return value of the callback should be "Number {NUM} is divisible by 5!".
-
-Both functions should be called if the array value is divisible by both 3 and 5. 
+Both functions should be called if the array value is divisible by both 3 and 5.
 
 Here is a starter template:
 
@@ -129,6 +127,7 @@ function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
 threeFive(10, 15, sayThree, sayFive);
 
 // Should create an array [10,11,12,13,14,15]
+// and call sayFive, sayThree, sayThree, sayFive
 ```
 
 ## **3. Code along**

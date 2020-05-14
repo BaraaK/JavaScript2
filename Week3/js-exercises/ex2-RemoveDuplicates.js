@@ -11,11 +11,29 @@ does not return anything but removes any duplicate elements from the array.
  */
 
 
-// WRITE YOUR FUNCTION HERE
 
+// first solution
+function removeDuplicates(arr){
+  for(let i = 0; i<arr.length ; i++) {
+    for (let j = arr.length-1; j>i ; j--) {
+      if (arr[i] === arr[j]) 
+        arr.splice(j,1); 
+    }
+  }
+}
+// second solution
+function myRemoveDuplicates(arr) {
+  let mySet = new Set(arr); // declare a set object and add the array into the set object to remove duplicated elements
+  let myArr = Array.from(mySet); // convert the set object into new array object
+  arr.splice(0,arr.length); // use the splice method to modify the array by removing all the elements form it 
+  arr.push.apply(arr,myArr); // add the new array elements to the original array
+
+}
 const letters = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c', 'b'];
 
-removeDuplicates(letter);
+removeDuplicates(letters);
+console.log(`fisrt solution : ${letters}`);
+myRemoveDuplicates(letters);
+console.log(`second solution: ${letters}`);
 
-if (letters === ['a', 'b', 'c', 'd', 'e', 'f'])
-  console.log("Hooray!")
+
